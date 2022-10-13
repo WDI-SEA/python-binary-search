@@ -8,11 +8,14 @@ Binary Search is an algorithm used to optimize finding an item in a sorted set. 
 
 * fork and clone this repo
 * use `search.py` to create an implementation of Binary Search
-* use `python3 search.py` to check you work
+
+> Given a target value an a sorted list of values, return the index of the target value in the list. If the value is not in the list, return `-1`
+
+* run `python3 search.py` to check you work
 
 ## How does this dark magic work?
 
-Lets you are given the following list of numbers, and you task is to find the `index` of 37, which we will valle the 'target':
+Lets say you are given the following list of numbers, and you task is to find the `index` of 37, which we will valle the 'target':
 
 ```python
 # for illustration purposes, the indexes of each elements are shown on the line below
