@@ -48,6 +48,7 @@ Also:
 
 #### Helpful links for research:
 
+* Explanation: [Gitbook](https://gasei.gitbook.io/sei/08-cs/teaser-ruby-binary-search)
 * Explanation: [Khan Academy](https://www.khanacademy.org/computing/computer-science/algorithms/binary-search/a/binary-search)
 * Explanation: [Technopedia](https://www.techopedia.com/definition/14270/binary-search)
 * Algorithm Visualization: [usfca](https://www.cs.usfca.edu/~galles/visualization/Search.html)
