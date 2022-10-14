@@ -15,7 +15,7 @@ Binary Search is an algorithm used to optimize finding an item in a sorted set. 
 
 ## How does this dark magic work?
 
-Lets say you are given the following list of numbers, and you task is to find the `index` of 37, which we will valle the 'target':
+Lets say you are given the following list of numbers, and you task is to find the `index` of 37:
 
 ```python
 # for illustration purposes, the indexes of each elements are shown on the line below
@@ -31,7 +31,7 @@ Here is a visualization of the process:
 
 ### Lets do some research!
 
-When learning a new algorithm, it is best to do your best to understand it without immediately looking at source code. Why? It helps the learning process by working through the problem yourself. Always try the following when learning a new algorithm to understand it most effectively:
+When learning a new algorithm, it is best to research and understand it without immediately looking at source code. Why? It helps the learning process by working through the problem yourself. Always try the following when learning a new algorithm to understand it most effectively:
 
 1. research and understand how the algorithm works
 1. break the algorithm down into steps, 'rubber ducking' or talking through the algorithm aloud can be a great help
