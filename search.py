@@ -19,3 +19,22 @@ Input: nums = [-1, 0, 3, 5, 9, 12], target = -1
 Output: 0
 Explanation: -1 exists in the list and its index is 0
 """
+
+def binary_search(nums, target):
+    start = 0
+    end = len(nums) - 1
+    while (start <= end):
+        midpoint = (start + end) // 2
+        if nums[midpoint] == target:
+            return midpoint
+        elif nums[midpoint] > target:
+            end = midpoint - 1
+        else:
+            start = midpoint + 1
+    return -1
+
+nums = [-1, 0, 3, 5, 9, 12]
+print(binary_search(nums, 9))     # expect 4
+print(binary_search(nums, 2))     # expect -1
+print(binary_search(nums, 12))    # expect 5
+print(binary_search(nums, -1))    # expect 0
