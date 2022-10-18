@@ -21,7 +21,8 @@ Explanation: -1 exists in the list and its index is 0
 """
 
 
-# Working Search
+# Working Search (non-recursive)
+
 # def binary_search(nums, target):
 #     low = 0
 #     high = len(nums)
@@ -52,7 +53,15 @@ Explanation: -1 exists in the list and its index is 0
 
 # print(binary_search([-1, 1, 3], -1))
 
-# Recursive attempt
+
+
+
+
+
+
+
+
+# Recursive attempt w/ global variables
 
 # arr = [0, 1, 3, 4, 5]
 # low = 0
@@ -83,6 +92,10 @@ Explanation: -1 exists in the list and its index is 0
 #     return binary_search(nums, target)
 
 # print(binary_search(arr, 6))
+
+
+
+
 
 
 
