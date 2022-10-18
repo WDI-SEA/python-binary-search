@@ -37,17 +37,50 @@ def binary_search(nums, target):
     mid = high // 2
 
     # might need edge case handling for first and last values in the list 
-
+    if nums[low] == target:
+        return low
     # loop until we have found the target or we have determined the target is not here
-
+    while True:
         # check if the mid point is the target number 
+        if nums[mid] == target:
             # if so, we can return mid point
+            return mid
         # if the mid point is less than the target
+        elif nums[mid] < target:
             # slide right by making low equal to mid
+            low = mid
             # recalc the new mid
         # if the mid point is greater than the target
+        else:
             # slide right by making high equal to what mid currently is
+            high = mid
             # recalc the new mild
 
+          # recalc the new mid
+        distance = high - low
+        mid = low + (distance // 2)
+
+        # print(f'high: {high}, low: {low}, mid: {mid}')
+
         # determine if we are out of bounds after recalculating the middle point
+        if low == mid:
             # if we are -- return -1 since our target is not present
+            return -1
+
+
+nums = [-1, 0, 3, 5, 9, 12] 
+target = 9
+
+print('it should be 4:', binary_search(nums, target))
+
+nums = [-1, 0, 3, 5, 9, 12]
+target = 12
+print('it should be 5:', binary_search(nums, target))
+
+nums = [-1, 0, 3, 5, 9, 12]
+target = -50
+print('it should be -1:', binary_search(nums, target))
+
+nums = [-1, 0, 3, 5, 9, 12]
+target = -1
+print('it should be 0:', binary_search(nums, target))
