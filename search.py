@@ -38,4 +38,19 @@ def binary_search(list, target):
             low = middle + 1
     return -1
 
-print(binary_search(li, 59))
+# print(binary_search(li, 59))
+
+def for_loop(list, target):
+    low = 0
+    high = len(list) - 1
+    for _ in range(low, high):
+        middle = math.floor((low + high) / 2)
+        if list[middle] == target:
+            return middle
+        elif list[middle] > target:
+            high = middle - 1
+        elif list[middle] < target:
+            low = middle + 1
+    return -1
+
+# print(for_loop(li, 2))
