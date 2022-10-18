@@ -64,7 +64,56 @@ def binary_search(array, targetValue):
 
     return -1
 
-print(binary_search([-1, 0, 3, 5, 9, 12],9))
+# print(binary_search([-1, 0, 3, 5, 9, 12],9))
+# print(binary_search([-1, 0, 3, 5, 9, 12],2))
+
+
+# -------------------------------- REVIEW ANSWERS ----------------------------------------------
+def search(nums, target):
+# keep track of the range
+    # high index
+    high = len(nums)
+    # mid --comparison index - forced integer division rounds down same as math.floor
+    mid = high //2
+    # low index
+    low = 0
+# might need edge case for first and last values in the list
+    if nums[low] == target:
+        return low
+    # loop until  conditions are met : either found the target or determined target isnt in the array 
+    while True:
+        # check id mid == target -> 
+        if nums[mid] == target:
+            # return index of mid
+            return mid
+        # if mid < target
+        elif nums[mid] < target:
+            # move the window to the right -> this makes the new low point the mid
+            low = mid
+            # recalc the new mid and restart loop
+        # if mid > target
+        else:
+            #  move window to the left makes the mid the new high
+            high = mid
+            # recalc new mid and restart loop
+        
+        # recalc new mid
+        distance = high - low 
+        mid = low + (distance //2 )
+
+        print(f'high: {high} mid:{mid} low:{low}')
+
+         # else if target not in array
+        if low == mid:
+            return -1
+
+
+nums = [-1, 0, 3, 5, 9, 12]
+target = 9
+
+print("it should be four", search(nums, target))
+
+   
 
 
 
