@@ -20,8 +20,12 @@ Output: 0
 Explanation: -1 exists in the list and its index is 0
 """
 # for illustration purposes, the indexes of each elements are shown on the line below
-li = [ 1, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59]
+li = [ 1, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59 ]
 # idx  0  1  2  3  4   5   6   7   8   9   10  11  12  13  14  15  16
+
+super_li = []
+for num in range(0, 1000000, 2):
+    super_li.append(num)
 
 import math
 
@@ -54,3 +58,16 @@ def for_loop(list, target):
     return -1
 
 # print(for_loop(li, 2))
+
+def recursion(list, target, high, low = 0):
+    if low > high:
+        return -1
+    middle = math.floor((low + high) / 2)
+    if list[middle] == target:
+        return middle
+    elif list[middle] > target:
+        return recursion(list, target, middle - 1, low)
+    elif list[middle] < target:
+        return recursion(list, target, high, middle + 1)
+    
+print(recursion(super_li, 999998, len(super_li) - 1))
