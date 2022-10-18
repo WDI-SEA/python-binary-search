@@ -49,32 +49,52 @@ def binary_search(list, target):
     # if the loop ends, then we have searched the enitre list and did not find our target
     return -1
 
-print(binary_search(li, 2))
+# print(binary_search(li, 2))
 
 def for_loop(list, target):
-    low = 0
-    high = len(list) - 1
-    for _ in range(low, high):
-        middle = (low + high) // 2
-        if list[middle] == target:
-            return middle
-        elif list[middle] > target:
-            high = middle - 1
-        elif list[middle] < target:
-            low = middle + 1
+    # low point
+    bot = 0
+    # high point
+    top = len(list) - 1
+    # loop (will not run if given range(higher number, lower number))
+    for _ in range(bot, top):
+        # calculate mid point
+        mid = (bot + top) // 2
+        # compare value at mid point to target
+        if list[mid] == target:
+            # if equal return mid
+            return mid
+        elif list[mid] > target:
+            # if mid greater, set high to mid minus one
+            top = mid - 1
+        elif list[mid] < target:
+            # if mid less, set low to mid plus one
+            bot = mid + 1
+    # loop ends when there is no longer a range to search for.
+    # so if we reach here and have not found our target, it is not present in the list
     return -1
 
-# print(for_loop(li, 2))
+# for num in range(5,1):
+#     print(num)
 
+# print(for_loop(li, 29))
+
+# add high and low as paramaters with some default values
 def recursion(list, target, high, low = 0):
+    # base case (when we have searched through the whole list)
     if low > high:
         return -1
+    # calculate middle point
     middle = (low + high) // 2
+    # compare middle point value to targer
     if list[middle] == target:
+        # if equal - return middle
         return middle
     elif list[middle] > target:
+        # if middle is greater, RECURSION run function again and pass in middle minus one as the new high
         return recursion(list, target, middle - 1, low)
     elif list[middle] < target:
+        # if middle is less, run function again and pass in middle plus one as new low
         return recursion(list, target, high, middle + 1)
     
 # print(recursion(super_li, 999998, len(super_li) - 1))
