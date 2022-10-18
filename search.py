@@ -19,3 +19,9 @@ Input: nums = [-1, 0, 3, 5, 9, 12], target = -1
 Output: 0
 Explanation: -1 exists in the list and its index is 0
 """
+
+
+nums = [0, 4, 6, 9, 15, 21, 36, 44, 51]
+start = 0
+end = len(nums)- 1
+print(start, end)
