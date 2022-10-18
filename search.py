@@ -41,7 +41,7 @@ print(binary_search(nums, -1))    # expect 0
 
 print("----")
 
-def recursive_binary_search(nums, target, start, end):
+def recursive_binary_search(nums, target, start = 0, end = len(nums)):
     if start > end:
         return -1
     midpoint = (start + end) // 2
@@ -52,7 +52,7 @@ def recursive_binary_search(nums, target, start, end):
     else:
         return recursive_binary_search(nums, target, midpoint + 1, end)
 
-print(recursive_binary_search(nums, 9, 0, len(nums)))     # expect 4
-print(recursive_binary_search(nums, 2, 0, len(nums)))     # expect -1
-print(recursive_binary_search(nums, 12, 0, len(nums)))    # expect 5
-print(recursive_binary_search(nums, -1, 0, len(nums)))    # expect 0
+print(recursive_binary_search(nums, 9))     # expect 4
+print(recursive_binary_search(nums, 2))     # expect -1
+print(recursive_binary_search(nums, 12))    # expect 5
+print(recursive_binary_search(nums, -1))    # expect 0
