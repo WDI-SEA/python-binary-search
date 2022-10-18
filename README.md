@@ -35,8 +35,8 @@ When learning a new algorithm, it is best to research and understand it without 
 
 1. research and understand how the algorithm works
 1. break the algorithm down into steps, 'rubber ducking' or talking through the algorithm aloud can be a great help
-1. reacreate the algorithmic steps in your physical space, for example use a deck of cards to execute each step of the alhgorithm
-1. write the alogorithm out using pseudocode, try rubber ducking as you do this
+1. recreate the algorithmic steps in your physical space, for example use a deck of cards to execute each step of the algorithm
+1. write the alogorithm out using psuedocode, try rubber ducking as you do this
 1. implement the pseudocode code you wrote and test your code, try to think of edge cases that you need to test and account for
 1. if something isn't working, loop back to step 1.
 
