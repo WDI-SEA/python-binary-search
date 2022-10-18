@@ -30,6 +30,14 @@ def binary_search():
     # print(f'start: {start}, mid: {mid}, end: {end}, target: {target}')
     while start <= end:
         mid = (start + end) // 2 # // is for floor division to avoid floats
+        if nums[mid] == target:
+            print(f'target: {target} is at nums array index: {mid}')
+            return mid
+        elif (nums[mid] < target):
+            start = mid + 1
+        else:
+            end = mid - 1
+    return -1
         
 
 
