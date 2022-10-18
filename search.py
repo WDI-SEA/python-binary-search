@@ -86,35 +86,32 @@ Explanation: -1 exists in the list and its index is 0
 
 
 
+# Non-global variable recursion version
+
+def binary_search(nums, target):
+    low = 0
+    high = len(nums) 
+    middle = int((low + high) / 2)
+    goalIsReached = 0
+
+    print(nums)
+    print(middle)
+
+    if target != nums[middle] and high-low == 1 or high-low == 0:
+        goalIsReached = 1
+        return f'target is not in the array, returning {-1}'
+    elif target == nums[middle]:
+        goalIsReached = 2
+        return f'{target} is in the list and its index is {middle}'
+
+    if target > nums[middle]:
+        low = middle
+        middle = int((high+low)/2)
+    elif target < nums[middle]:
+        high = middle
+        middle = int((high+low)/2)
 
 
-# arr = [0, 1, 3, 4, 5]
+    return binary_search(nums, target)
 
-
-# def binary_search(nums, target):
-#     low = 0
-#     high = len(nums) 
-#     middle = int((low + high) / 2)
-#     goalIsReached = 0
-
-#     print(nums)
-#     print(middle)
-
-#     if target != nums[middle] and high-low == 1 or high-low == 0:
-#         goalIsReached = 1
-#         return f'target is not in the array, returning {-1}'
-#     elif target == nums[middle]:
-#         goalIsReached = 2
-#         return f'{target} is in the list and its index is {middle}'
-
-#     if target > nums[middle]:
-#         low = middle
-#         middle = int((high+low)/2)
-#     elif target < nums[middle]:
-#         high = middle
-#         middle = int((high+low)/2)
-
-
-#     return binary_search(nums, target)
-
-# print(binary_search([0, 1, 2, 3, 4, 5, 6], 6))
+print(binary_search([0, 1, 2, 3, 4, 5, 6], 6))
