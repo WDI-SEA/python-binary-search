@@ -21,9 +21,19 @@ Explanation: -1 exists in the list and its index is 0
 """
 
 
-nums = [0, 4, 6, 9, 15, 21, 36, 44, 51]
-target = 6
-start = 0
-end = len(nums)- 1
-mid = 4
-print(start, mid, end)
+
+def binary_search():
+    nums = [0, 4, 6, 9, 15, 21, 36, 44, 51, 69]
+    target = 9
+    start = 0
+    end = len(nums)- 1
+    # print(f'start: {start}, mid: {mid}, end: {end}, target: {target}')
+    while start <= end:
+        mid = (start + end) // 2 # // is for floor division to avoid floats
+        
+
+
+binary_search()
+
+
+    
