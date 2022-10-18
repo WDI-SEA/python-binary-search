@@ -20,11 +20,12 @@ Output: 0
 Explanation: -1 exists in the list and its index is 0
 """
 
-
+# ## # ## # ## # ## #
+# BINARY SEARCH
 
 def binary_search():
     nums = [0, 4, 6, 9, 15, 21, 36, 44, 51, 69]
-    target = 9
+    target = 36
     start = 0
     end = len(nums)- 1
     # print(f'start: {start}, mid: {mid}, end: {end}, target: {target}')
@@ -39,9 +40,34 @@ def binary_search():
             end = mid - 1
     return -1
         
+# binary_search()
 
 
-binary_search()
+
+# ## # ## # ## # ## #
+# RECURSION
+
+def recursive_search(nums, start, end, target):
+    if end >= start: # check base case
+        mid = (start + end) // 2
+        if nums[mid] == target: # if target is equal to mid
+            return mid
+        elif nums[mid] > target: # if target is less than mid, get rid of array i's > mid
+            return recursive_search(nums, start, mid - 1, target)
+        else: # if target > mid, get rid of array i's < mid
+            return recursive_search(nums, mid + 1, end, target)
+    return -1 # target is not in nums array 
+
+
+nums = [0, 4, 6, 9, 15, 21, 36, 44, 51, 69]
+target = 4
+
+answer = recursive_search(nums, 0, len(nums) - 1, target)
+
+if answer != -1:
+    print('Target is at index', str(answer))
+else:
+    print('Target is not in nums array')
 
 
     
