@@ -19,3 +19,84 @@ Input: nums = [-1, 0, 3, 5, 9, 12], target = -1
 Output: 0
 Explanation: -1 exists in the list and its index is 0
 """
+
+    
+
+
+
+def binary_search(list, target):
+    min = 0
+    max = len(list)-1
+    mid = 0
+
+    while min <= max:
+        mid = (max + min) // 2
+        if target == list[mid]:
+            return mid
+
+        if target < list[mid]:
+            max = mid - 1
+        else:
+            min = mid + 1
+    return -1
+
+
+
+result = binary_search([-1, 0, 3, 5, 9, 12], 9)
+
+if result != -1:
+    print('found at:', str(result))
+else:
+    print('not present')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# my 1 hr try. got stuck in infinite loop but decently content with progress.
+
+# def binary_search(list, target):
+#     found = False
+
+#     min = 0
+#     max = len(list)-1
+#     mid = (len(list)-1)//2   
+    
+
+#     while found == False:
+#         if target == list[mid]:
+#             print(mid)
+#             found = True
+#         elif target < list[mid]:
+#             max = mid -1
+#             mid = (max - min)//2
+#             if target == list[mid]:
+#                 print(mid)
+#                 found = True
+#         else:
+#             min = mid + 1
+#             mid = (max - min)//2
+#             if target == list[mid]:
+#                 print(mid)
+#                 found = True
+                
+#         print('yoyo', list, mid)
+
+
+# binary_search([-1, 0, 3, 5, 9, 12], 0)
+
+
+
+
+
+ 
