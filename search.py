@@ -1,4 +1,20 @@
 
+## === ## PSEUDOCODE ## === ##
+
+# input: array[x,y,z], value
+
+# Define beginning variables of min, max, and guess (avg of max/min)
+
+# starting at index of guess, check if value matches.
+    # if value > guess:
+        # reset min to guess and recalculate guess
+    # if value < guess:
+        # reset max to guess and recalculate guess
+    # if value = guess:
+        # stop the loop and return index
+    # if value not found:
+        # stop the loop and return -1
+
 ## === ## STATE VARIABLES ## === ##
 
 # range = starts with array[first] --> array[last]
@@ -9,32 +25,33 @@
 def binary_search_alg(array, value):
     
     n = len(array)
-    # print(n)
-
     low = 0
     high = n-1
-    # print(high)
-    guess = int((high+low)/2)
-    # print(guess)
+    guess = int((high+low)/2) # average of high and low to check middle of the range
 
+    # to keep the function running in the while loop:
     binary_searching = True
 
+    # to check if the value we're looking for is automatically not found in the array:
     if value < array[low] or value > array[high]:
         print(f'That value doesn\'t exist in this array, so the index is -1')
         return -1
 
     while binary_searching:
 
+        # if the range is so narrow that low and high are next to each other and guess is still not present:
         if (high - low) == 1:
             binary_searching = False
             print(f'That value doesn\'t exist in this array, so the index is -1')
             return -1
 
+        # if the guess is the value and we've found it in the array:
         if value == array[guess]:
             binary_searching = False
             print(f'The value you\'re looking for is at index {guess}')
             return guess
 
+        # if the value we're looking for is greater than the value at the guess index:
         if value > array[guess]:
             print('value > guess')
             # print(low, high, guess)
@@ -44,6 +61,7 @@ def binary_search_alg(array, value):
             # print(guess)
             continue
 
+         # if the value we're looking for is less than the value at the guess index:
         if value < array[guess]:
             print('value < guess')
             high = guess
