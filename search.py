@@ -43,23 +43,6 @@ while search:
             print("number doesn't exist")
             print("return -1")
             search = False
-    elif int(len(nums)) == 2:
-        # print(f"nums list: {nums}")
-        if nums[index] == target:
-            output = sum(index_list) + index
-            print(f"{target} is found at index {output}")
-            search = False
-        elif nums[index] > target:
-            print(f"num: {nums[index]}")
-            print("move left in the list")
-            print(f"index list: {index_list}")
-            nums = nums[:(index):]
-        elif nums[index] < target:
-            print(f"num: {nums[index]}")
-            index_list.append(index)
-            print("move right in the list")
-            print(f"index list: {index_list}")
-            nums = nums[index::]
     else: 
     # if matched, elif < or > create new list
         if nums[index] == target:
@@ -71,7 +54,7 @@ while search:
             print("move left in the list")
             # index_list.append(index)
             print(f"index list: {index_list}")
-            nums = nums[:(index + 1):]
+            nums = nums[:index:]
         elif nums[index] < target:
             print(f"num: {nums[index]}")
             index_list.append(index)
