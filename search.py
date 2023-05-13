@@ -21,21 +21,28 @@ Explanation: -1 exists in the list and its index is 0
 """
 
 def binary_search(arr, target):
-    min_idx = arr[0]
-    max_idx = len(arr) - 1
-    mid_idx = int(max_idx / 2)
-    middle = arr[mid_idx]
-
     # keep track of minimum of the range
+    min_idx = 0
     # keep track of the max of the range
-    # keep track of the middle of the range
-    # check if middle of the range equals target
-        # if not & mid is > target, check left half, if mid < target check right half
-        # loop this until value is found, or where index would be
-    
-    print("min idx: ", min_idx)
-    print("mid idx: ", mid_idx)
-    print("middle value: ", middle)
-    print("max idx: ", max_idx)
+    max_idx = len(arr) - 1
 
-binary_search([-1, 0, 3, 5, 9, 12], -1)
+    # loop this until value is found, or where index would be
+    while min_idx < max_idx:
+        # keep track of the middle of the range
+        mid_idx = int((min_idx + max_idx) / 2)
+        middle = arr[mid_idx]
+        # check if middle of the range equals target
+        if middle == target:
+            return mid_idx
+        # if mid < target, narrow in on right side
+        elif middle < target:
+            min_idx = mid_idx + 1
+            # print(arr[mid_idx])
+        # if mid > target, narrow in on left half
+        else:
+            max_idx = mid_idx - 1
+            # print(arr[mid_idx])
+    # returns -1 if target not found in array
+    return -1
+
+print(binary_search([ 1, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59 ], 2))
