@@ -20,15 +20,22 @@ Output: 0
 Explanation: -1 exists in the list and its index is 0
 """
 
-def binary_search(arr):
+def binary_search(arr, target):
     min_idx = arr[0]
     max_idx = len(arr) - 1
     mid_idx = int(max_idx / 2)
     middle = arr[mid_idx]
-    
-    print(min_idx)
-    print(mid_idx)
-    print(middle)
-    print(max_idx)
 
-binary_search([-1,2,4,6,8])
+    # keep track of minimum of the range
+    # keep track of the max of the range
+    # keep track of the middle of the range
+    # check if middle of the range equals target
+        # if not & mid is > target, check left half, if mid < target check right half
+        # loop this until value is found, or where index would be
+    
+    print("min idx: ", min_idx)
+    print("mid idx: ", mid_idx)
+    print("middle value: ", middle)
+    print("max idx: ", max_idx)
+
+binary_search([-1, 0, 3, 5, 9, 12], -1)
