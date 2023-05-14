@@ -27,12 +27,10 @@ def recursive_binary_search(arr, target):
         return recursive_binary_search(arr[:mid_idx], target)
     else:
         # check mid_idx + 1 - last idx
-        result = recursive_binary_search(arr[mid_idx + 1], target)
+        result = recursive_binary_search(arr[mid_idx + 1:], target)
         if result == -1:
             return -1
         else:
             return result + mid_idx + 1
 
-
-
-print(recursive_binary_search([-1, 0, 3, 5, 9, 12], 12))
+print(recursive_binary_search([-1, 0, 3, 5, 9, 12], 5))
