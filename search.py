@@ -19,3 +19,26 @@ Input: nums = [-1, 0, 3, 5, 9, 12], target = -1
 Output: 0
 Explanation: -1 exists in the list and its index is 0
 """
+# setup
+def binary_search(array, target):
+    left = 0
+    right = len(array)
+# determine the middle
+    while left < right:
+# run through loop to half things
+        middle = (left + right) // 2
+        if array[middle] < target:
+            left = middle + 1
+        else:
+            right = middle
+# check for target
+    if array[left] == target:
+        return left
+    else:
+        return -1
+
+
+nums = [-1, 0, 3, 5, 9, 12]
+target = -1
+index = binary_search(nums, target)
+print(index)
