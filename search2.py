@@ -26,7 +26,7 @@ while search:
             print(f"{target} is found at index {output}")
             search = False
         elif nums[index] > target:
-            nums = nums[:index:]
+            nums = nums[:index:] # find a solution that isn't changing a list
         elif nums[index] < target:
             index_list.append(index)
             nums = nums[index::]
